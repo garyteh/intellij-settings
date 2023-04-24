@@ -1,0 +1,42 @@
+<templateSet group="Kotlin">
+  <template name="ptest" value="@org.junit.jupiter.params.ParameterizedTest&#10;@Throws(Exception::class)&#10;$SOURCE$&#10;fun $METHOD_NAME$($ARG_TYPE$ $ARG_NAME$) {&#10;    $END$&#10;}&#10;" description="Create JUnit 5 @ParameterizedTest" toReformat="false" toShortenFQNames="true">
+    <variable name="SOURCE" expression="completeSmart()" defaultValue="" alwaysStopAt="true" />
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG_TYPE" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="ptestms" value="@org.junit.jupiter.params.ParameterizedTest&#10;@org.junit.jupiter.params.provider.MethodSource(&quot;$METHOD_NAME$&quot;)&#10;@Throws(Exception::class)&#10;fun $METHOD_NAME$($ARG_TYPE$ $ARG_NAME$) {&#10;}&#10;&#10;fun java.util.stream.Stream&lt;$ARG_TYPE$&gt; $METHOD_NAME$() {&#10;    return java.util.stream.Stream.of($END$);&#10;}" description="Create JUnit 5 @ParameterizedTest with @MethodSource" toReformat="false" toShortenFQNames="true">
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG_TYPE" expression="typeOfVariable(VAR)" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG_NAME" expression="suggestVariableName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="ptestmsa" value="@org.junit.jupiter.params.ParameterizedTest&#10;@org.junit.jupiter.params.provider.MethodSource(&quot;$METHOD_NAME$&quot;)&#10;@Throws(Exception::class)&#10;fun $METHOD_NAME$($PARAMS$) {&#10;}&#10;&#10;private fun java.util.stream.Stream&lt;org.junit.jupiter.params.provider.Arguments&gt; $METHOD_NAME$() {&#10;    return java.util.stream.Stream.of(&#10;        org.junit.jupiter.params.provider.Arguments.arguments($END$)&#10;    );&#10;}" description="Create JUnit 5 @ParameterizedTest with @MethodSource (arguments)" toReformat="false" toShortenFQNames="true">
+    <variable name="METHOD_NAME" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <variable name="PARAMS" expression="methodParameters()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="setup" value="@org.junit.jupiter.api.BeforeEach&#10;@Throws(Exception::class)&#10;fun setup() {&#10;    $END$&#10;}" description="Create JUnit 5 @BeforeEach case" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="teardown" value="@org.junit.jupiter.api.AfterEach&#10;@Throws(Exception::class)&#10;fun teardown() {&#10;    $END$&#10;}" description="Create JUnit 5 @AfterEach case" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+  <template name="test" value="@org.junit.jupiter.api.Test&#10;@Throws(Exception::class)&#10;fun `$method$`() {&#10;    $END$&#10;}" description="Create JUnit @Test case" toReformat="false" toShortenFQNames="true">
+    <variable name="method" expression="methodName()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN_CLASS" value="true" />
+    </context>
+  </template>
+</templateSet>

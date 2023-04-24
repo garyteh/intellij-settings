@@ -1,0 +1,26 @@
+<application>
+  <component name="FindSettings">
+    <option name="customScope" value="Project and Libraries" />
+    <option name="defaultScopeName" value="Project and Libraries" />
+    <option name="regularExpressions" value="true" />
+    <option name="REGULAR_EXPRESSIONS" value="true" />
+    <option name="SEARCH_SCOPE" value="Project and Libraries" />
+    <mask>*.css</mask>
+    <mask>*.html</mask>
+    <mask>*.xml</mask>
+    <mask>*.jsp</mask>
+    <mask>*.properties</mask>
+    <mask>*.</mask>
+    <mask>README.*</mask>
+    <mask>!*.java</mask>
+    <mask>(.*gradle|pom.xml)</mask>
+    <mask>*.gradle</mask>
+    <mask>pom.xml</mask>
+    <mask>*.yml</mask>
+    <mask>build.gradle</mask>
+    <mask>!test.tsx</mask>
+    <mask>*.yaml</mask>
+    <mask>!*.js</mask>
+    <mask>*.java</mask>
+  </component>
+</application>
